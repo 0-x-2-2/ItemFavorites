@@ -49,8 +49,9 @@ public abstract class MixinScreenHandler {
         at = @At(
             value = "INVOKE",
             target = "Lnet/minecraft/screen/slot/Slot;getMaxItemCount(Lnet/minecraft/item/ItemStack;)I",
-            ordinal = 0),
-        index = 0)
+            ordinal = 0
+        )
+    )
     private ItemStack suppressFavoriteStatus(ItemStack itemStack) {
         var targetSlotFavoriteStatus = ExtensionItemStack.isFavorite(quickCraftSlot.getStack());
 
